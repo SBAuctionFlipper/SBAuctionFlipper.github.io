@@ -1,0 +1,170 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 50%, #0a0e1a 100%);
+            min-height: 100vh;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .auction-card {
+            transition: all 0.3s ease;
+            background: rgba(20, 25, 40, 0.8);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .auction-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(16, 185, 129, 0.3);
+        }
+
+        .flip-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            animation: pulse-flip 2s infinite;
+            z-index: 10;
+        }
+
+        @keyframes pulse-flip {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+        
+        .stat-card {
+            background: rgba(20, 25, 40, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.6); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .loading-spinner {
+            border: 3px solid rgba(16, 185, 129, 0.2);
+            border-top: 3px solid #10b981;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Minecraft Tooltip Styles */
+        .mc-tooltip {
+            position: absolute;
+            background: linear-gradient(to bottom, rgba(16, 0, 16, 0.94), rgba(16, 0, 16, 0.94));
+            border: 2px solid;
+            border-image: linear-gradient(to bottom, 
+                rgba(80, 0, 255, 0.5) 0%,
+                rgba(40, 0, 200, 0.5) 100%
+            ) 1;
+            padding: 12px;
+            border-radius: 0;
+            pointer-events: none;
+            z-index: 1000;
+            min-width: 300px;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(80, 0, 255, 0.4);
+            font-family: 'Courier New', monospace;
+            display: none;
+        }
+
+        .mc-tooltip.show {
+            display: block;
+        }
+
+        .mc-tooltip-line {
+            margin: 2px 0;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+        }
+
+        /* Color classes for rarities */
+        .rarity-common { color: #ffffff; }
+        .rarity-uncommon { color: #55ff55; }
+        .rarity-rare { color: #5555ff; }
+        .rarity-epic { color: #aa00aa; }
+        .rarity-legendary { color: #ffaa00; }
+        .rarity-mythic { color: #ff55ff; }
+        .rarity-divine { color: #55ffff; }
+        .rarity-special { color: #ff5555; }
+        .rarity-very_special { color: #ff5555; }
+
+        .border-rarity-common { border-color: rgba(255, 255, 255, 0.5); }
+        .border-rarity-uncommon { border-color: rgba(85, 255, 85, 0.5); }
+        .border-rarity-rare { border-color: rgba(85, 85, 255, 0.5); }
+        .border-rarity-epic { border-color: rgba(170, 0, 170, 0.5); }
+        .border-rarity-legendary { border-color: rgba(255, 170, 0, 0.5); }
+        .border-rarity-mythic { border-color: rgba(255, 85, 255, 0.5); }
+        .border-rarity-divine { border-color: rgba(85, 255, 255, 0.5); }
+        .border-rarity-special { border-color: rgba(255, 85, 85, 0.5); }
+
+        .minecraft-font {
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+        }
+
+        .copy-tooltip {
+            position: absolute;
+            background: rgba(16, 185, 129, 0.95);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1001;
+        }
+
+        .copy-tooltip.show {
+            opacity: 1;
+        }
+
+        /* Lore colors */
+        .mc-gray { color: #AAAAAA; }
+        .mc-dark-gray { color: #555555; }
+        .mc-blue { color: #5555FF; }
+        .mc-dark-blue { color: #0000AA; }
+        .mc-green { color: #55FF55; }
+        .mc-dark-green { color: #00AA00; }
+        .mc-aqua { color: #55FFFF; }
+        .mc-dark-aqua { color: #00AAAA; }
+        .mc-red { color: #FF5555; }
+        .mc-dark-red { color: #AA0000; }
+        .mc-light-purple { color: #FF55FF; }
+        .mc-dark-purple { color: #AA00AA; }
+        .mc-yellow { color: #FFFF55; }
+        .mc-gold { color: #FFAA00; }
+        .mc-white { color: #FFFFFF; }
